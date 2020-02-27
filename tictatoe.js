@@ -34,7 +34,7 @@ function tick_action(clicked_id) {
             }
         }
     }
-    if (countX === countO) {
+    if (countO >= countX) {
         board[positionX][positionY] = 'X';
 
     } else {
@@ -47,12 +47,14 @@ function tick_action(clicked_id) {
         for (let j = 0; j < 10; j++) {
             if ((board[i][j] === "X" && board[i][j] === board[i][j + 1] && board[i][j] === board[i][j + 2] && board[i][j] === board[i][j + 3]) ||
                 (board[i][j] === "X" && board[i][j] === board[i + 1][j] && board[i][j] === board[i + 2][j] && board[i][j] === board[i + 3][j]) ||
+                (board[i][j] === "X" && board[i][j] === board[i + 1][j-1] && board[i][j] === board[i + 2][j-2] && board[i][j] === board[i + 3][j-3]) ||
                 (board[i][j] === "X" && board[i][j] === board[i + 1][j + 1] && board[i][j] === board[i + 2][j + 2] && board[i][j] === board[i + 3][j + 3])) {
                 alert('Tro choi ket thuc. X thang');
                 break;
             }
             if ((board[i][j] === "O" && board[i][j] === board[i][j + 1] && board[i][j] === board[i][j + 2] && board[i][j] === board[i][j + 3]) ||
                 (board[i][j] === "O" && board[i][j] === board[i + 1][j] && board[i][j] === board[i + 2][j] && board[i][j] === board[i + 3][j]) ||
+                (board[i][j] === "O" && board[i][j] === board[i + 1][j-1] && board[i][j] === board[i + 2][j-2] && board[i][j] === board[i + 3][j-3]) ||
                 (board[i][j] === "O" && board[i][j] === board[i + 1][j + 1] && board[i][j] === board[i + 2][j + 2] && board[i][j] === board[i + 3][j + 3])) {
                 alert('Tro choi ket thuc. O thang');
                 break;
